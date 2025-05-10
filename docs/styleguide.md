@@ -128,6 +128,33 @@ This document provides design principles and guidelines for the Dynamic Truewhee
 - Use a consistent loading indicator throughout the application.
 - Ensure that loading indicators are visible and provide feedback to the user.
 
+## UI Components Reference
+
+### App Bar
+
+- **Sticky Behavior:** The app bar should remain fixed at the top of the screen when scrolling.
+- **Mobile Menu:** Implement a mobile menu for smaller screens.
+
+### Footer
+
+- **Multi-Column Layout:** Create a multi-column layout for the footer.
+- **Quick Links:** Add quick links to the footer.
+
+### Back to Top
+
+- **Scroll Detection:** Implement scroll detection to show/hide the back-to-top button.
+- **Smooth Scroll:** Add smooth scroll behavior when the button is clicked.
+
+### Newsletter
+
+- **Email Validation:** Add email validation to the newsletter form.
+- **API Integration:** Integrate with the API to submit email addresses.
+
+### Social Icons
+
+- **Platform Icons:** Add platform-specific icons for social media.
+- **Hover Effects:** Implement hover effects for the icons.
+
 ## Conclusion
 
 By following these design principles and guidelines, we can create a user interface that is visually appealing, consistent, and user-friendly. This style guide should be used as a reference for all design and development work on the Dynamic Truewheel Project.

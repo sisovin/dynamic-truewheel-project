@@ -106,3 +106,116 @@ Docker configuration is set up in `docker-compose.yml`. It defines services and 
 ### Gitignore
 
 A `.gitignore` file is added to exclude unnecessary files from version control. It includes common patterns for Python and Flutter projects.
+
+## Setup Instructions
+
+### Prerequisites
+
+- Docker
+- Docker Compose
+- Flutter SDK
+- Python 3.x
+- PostgreSQL
+
+### Backend Setup
+
+1. Navigate to the backend directory:
+   ```bash
+   cd apps/backend
+   ```
+
+2. Create a virtual environment and activate it:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate
+   ```
+
+3. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Apply the database migrations:
+   ```bash
+   python manage.py migrate
+   ```
+
+5. Create a superuser:
+   ```bash
+   python manage.py createsuperuser
+   ```
+
+6. Start the development server:
+   ```bash
+   python manage.py runserver
+   ```
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+   ```bash
+   cd apps/frontend
+   ```
+
+2. Install the required dependencies:
+   ```bash
+   flutter pub get
+   ```
+
+3. Run the Flutter web app:
+   ```bash
+   flutter run -d web-server --web-port 8080 --web-hostname 0.0.0.0
+   ```
+
+### Docker Setup
+
+1. Build and start the Docker containers:
+   ```bash
+   docker-compose up --build
+   ```
+
+2. Access the backend API at `http://localhost:8000/api/`.
+
+3. Access the Flutter web app at `http://localhost:8080/`.
+
+## Feature Overview
+
+### Shared Components
+
+- **App Bar**: Sticky behavior and mobile menu.
+- **Footer**: Multi-column layout and quick links.
+- **Back to Top**: Scroll detection and smooth scroll.
+- **Newsletter**: Email validation and API integration.
+- **Social Icons**: Platform icons and hover effects.
+
+### Services
+
+- **API Service**: Dio configuration and error handling.
+- **Auth Service**: Login/logout and token management.
+- **Vehicle Service**: Vehicle fetching and search/filter.
+
+### Utilities
+
+- **Constants**: App constants and API endpoints.
+- **Extensions**: String extensions and context helpers.
+- **SEO Helper**: Meta tag management and dynamic title/description.
+
+### Static Assets
+
+- **Index HTML**: SEO meta tags and favicon references.
+- **Styles**: SCSS variables, responsive mixins, and global styles.
+
+### Project Configuration
+
+- **Gitignore**: Python/Flutter defaults and environment files.
+- **Docker Compose**: Django, PostgreSQL, and Flutter web services.
+- **API Documentation**: Detailed API documentation.
+- **Style Guide**: UI components reference.
+
+### Additional Tasks
+
+- Write unit/integration tests.
+- Set up analytics.
+- Configure error tracking.
+- Implement accessibility features.
+- Add performance monitoring.
