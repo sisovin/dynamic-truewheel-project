@@ -33,5 +33,27 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  django:
+    build: ./apps/backend
+    container_name: django
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./apps/backend:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  flutter:
+    build: ./apps/frontend
+    container_name: flutter
+    command: flutter run -d web-server --web-port 8080 --web-hostname 0.0.0.0
+    volumes:
+      - ./apps/frontend:/app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - django
+
 volumes:
   postgres_data:

@@ -67,6 +67,276 @@ http://localhost:8000/api/
   - `204 No Content`: Example model deleted successfully.
   - `404 Not Found`: Example model not found.
 
+### Vehicle
+
+#### List Vehicles
+
+- **URL:** `/vehicles/`
+- **Method:** `GET`
+- **Description:** Retrieve a list of all vehicles.
+- **Response:**
+  - `200 OK`: Returns a list of vehicles.
+
+#### Create Vehicle
+
+- **URL:** `/vehicles/`
+- **Method:** `POST`
+- **Description:** Create a new vehicle.
+- **Request Body:**
+  - `make` (string): The make of the vehicle.
+  - `model` (string): The model of the vehicle.
+  - `year` (integer): The year of the vehicle.
+  - `price` (decimal): The price of the vehicle.
+  - `description` (string): The description of the vehicle.
+  - `dealer` (integer): The ID of the dealer associated with the vehicle.
+- **Response:**
+  - `201 Created`: Returns the created vehicle.
+  - `400 Bad Request`: Returns validation errors.
+
+#### Retrieve Vehicle
+
+- **URL:** `/vehicles/<int:pk>/`
+- **Method:** `GET`
+- **Description:** Retrieve a specific vehicle by its ID.
+- **Response:**
+  - `200 OK`: Returns the vehicle.
+  - `404 Not Found`: Vehicle not found.
+
+#### Update Vehicle
+
+- **URL:** `/vehicles/<int:pk>/`
+- **Method:** `PUT`
+- **Description:** Update a specific vehicle by its ID.
+- **Request Body:**
+  - `make` (string): The make of the vehicle.
+  - `model` (string): The model of the vehicle.
+  - `year` (integer): The year of the vehicle.
+  - `price` (decimal): The price of the vehicle.
+  - `description` (string): The description of the vehicle.
+  - `dealer` (integer): The ID of the dealer associated with the vehicle.
+- **Response:**
+  - `200 OK`: Returns the updated vehicle.
+  - `400 Bad Request`: Returns validation errors.
+  - `404 Not Found`: Vehicle not found.
+
+#### Delete Vehicle
+
+- **URL:** `/vehicles/<int:pk>/`
+- **Method:** `DELETE`
+- **Description:** Delete a specific vehicle by its ID.
+- **Response:**
+  - `204 No Content`: Vehicle deleted successfully.
+  - `404 Not Found`: Vehicle not found.
+
+### User
+
+#### List Users
+
+- **URL:** `/users/`
+- **Method:** `GET`
+- **Description:** Retrieve a list of all users.
+- **Response:**
+  - `200 OK`: Returns a list of users.
+
+#### Create User
+
+- **URL:** `/users/`
+- **Method:** `POST`
+- **Description:** Create a new user.
+- **Request Body:**
+  - `email` (string): The email of the user.
+  - `username` (string): The username of the user.
+  - `password` (string): The password of the user.
+  - `first_name` (string): The first name of the user.
+  - `last_name` (string): The last name of the user.
+- **Response:**
+  - `201 Created`: Returns the created user.
+  - `400 Bad Request`: Returns validation errors.
+
+#### Retrieve User
+
+- **URL:** `/users/<int:pk>/`
+- **Method:** `GET`
+- **Description:** Retrieve a specific user by their ID.
+- **Response:**
+  - `200 OK`: Returns the user.
+  - `404 Not Found`: User not found.
+
+#### Update User
+
+- **URL:** `/users/<int:pk>/`
+- **Method:** `PUT`
+- **Description:** Update a specific user by their ID.
+- **Request Body:**
+  - `email` (string): The email of the user.
+  - `username` (string): The username of the user.
+  - `password` (string): The password of the user.
+  - `first_name` (string): The first name of the user.
+  - `last_name` (string): The last name of the user.
+- **Response:**
+  - `200 OK`: Returns the updated user.
+  - `400 Bad Request`: Returns validation errors.
+  - `404 Not Found`: User not found.
+
+#### Delete User
+
+- **URL:** `/users/<int:pk>/`
+- **Method:** `DELETE`
+- **Description:** Delete a specific user by their ID.
+- **Response:**
+  - `204 No Content`: User deleted successfully.
+  - `404 Not Found`: User not found.
+
+### Dealer
+
+#### List Dealers
+
+- **URL:** `/dealers/`
+- **Method:** `GET`
+- **Description:** Retrieve a list of all dealers.
+- **Response:**
+  - `200 OK`: Returns a list of dealers.
+
+#### Create Dealer
+
+- **URL:** `/dealers/`
+- **Method:** `POST`
+- **Description:** Create a new dealer.
+- **Request Body:**
+  - `name` (string): The name of the dealer.
+  - `address` (string): The address of the dealer.
+  - `phone_number` (string): The phone number of the dealer.
+  - `email` (string): The email of the dealer.
+- **Response:**
+  - `201 Created`: Returns the created dealer.
+  - `400 Bad Request`: Returns validation errors.
+
+#### Retrieve Dealer
+
+- **URL:** `/dealers/<int:pk>/`
+- **Method:** `GET`
+- **Description:** Retrieve a specific dealer by their ID.
+- **Response:**
+  - `200 OK`: Returns the dealer.
+  - `404 Not Found`: Dealer not found.
+
+#### Update Dealer
+
+- **URL:** `/dealers/<int:pk>/`
+- **Method:** `PUT`
+- **Description:** Update a specific dealer by their ID.
+- **Request Body:**
+  - `name` (string): The name of the dealer.
+  - `address` (string): The address of the dealer.
+  - `phone_number` (string): The phone number of the dealer.
+  - `email` (string): The email of the dealer.
+- **Response:**
+  - `200 OK`: Returns the updated dealer.
+  - `400 Bad Request`: Returns validation errors.
+  - `404 Not Found`: Dealer not found.
+
+#### Delete Dealer
+
+- **URL:** `/dealers/<int:pk>/`
+- **Method:** `DELETE`
+- **Description:** Delete a specific dealer by their ID.
+- **Response:**
+  - `204 No Content`: Dealer deleted successfully.
+  - `404 Not Found`: Dealer not found.
+
+### Testimonial
+
+#### List Testimonials
+
+- **URL:** `/testimonials/`
+- **Method:** `GET`
+- **Description:** Retrieve a list of all testimonials.
+- **Response:**
+  - `200 OK`: Returns a list of testimonials.
+
+#### Create Testimonial
+
+- **URL:** `/testimonials/`
+- **Method:** `POST`
+- **Description:** Create a new testimonial.
+- **Request Body:**
+  - `user` (integer): The ID of the user associated with the testimonial.
+  - `vehicle` (integer): The ID of the vehicle associated with the testimonial.
+  - `content` (string): The content of the testimonial.
+  - `rating` (integer): The rating of the testimonial.
+- **Response:**
+  - `201 Created`: Returns the created testimonial.
+  - `400 Bad Request`: Returns validation errors.
+
+#### Retrieve Testimonial
+
+- **URL:** `/testimonials/<int:pk>/`
+- **Method:** `GET`
+- **Description:** Retrieve a specific testimonial by its ID.
+- **Response:**
+  - `200 OK`: Returns the testimonial.
+  - `404 Not Found`: Testimonial not found.
+
+#### Update Testimonial
+
+- **URL:** `/testimonials/<int:pk>/`
+- **Method:** `PUT`
+- **Description:** Update a specific testimonial by its ID.
+- **Request Body:**
+  - `user` (integer): The ID of the user associated with the testimonial.
+  - `vehicle` (integer): The ID of the vehicle associated with the testimonial.
+  - `content` (string): The content of the testimonial.
+  - `rating` (integer): The rating of the testimonial.
+- **Response:**
+  - `200 OK`: Returns the updated testimonial.
+  - `400 Bad Request`: Returns validation errors.
+  - `404 Not Found`: Testimonial not found.
+
+#### Delete Testimonial
+
+- **URL:** `/testimonials/<int:pk>/`
+- **Method:** `DELETE`
+- **Description:** Delete a specific testimonial by its ID.
+- **Response:**
+  - `204 No Content`: Testimonial deleted successfully.
+  - `404 Not Found`: Testimonial not found.
+
+### Authentication
+
+#### Login
+
+- **URL:** `/auth/login/`
+- **Method:** `POST`
+- **Description:** Authenticate a user and return a token.
+- **Request Body:**
+  - `email` (string): The email of the user.
+  - `password` (string): The password of the user.
+- **Response:**
+  - `200 OK`: Returns the authentication token.
+  - `400 Bad Request`: Returns validation errors.
+  - `401 Unauthorized`: Authentication failed.
+
+#### Logout
+
+- **URL:** `/auth/logout/`
+- **Method:** `POST`
+- **Description:** Logout a user and invalidate the token.
+- **Response:**
+  - `200 OK`: Logout successful.
+  - `401 Unauthorized`: Authentication required.
+
+### Search
+
+#### Search Vehicles
+
+- **URL:** `/search/`
+- **Method:** `GET`
+- **Description:** Search for vehicles based on query parameters.
+- **Query Parameters:**
+  - `q` (string): The search query.
+- **Response:**
+  - `200 OK`: Returns a list of vehicles matching the search query.
+
 ## Authentication
 
 The API uses token-based authentication. Include the token in the `Authorization` header of your requests:

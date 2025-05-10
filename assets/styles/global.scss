@@ -1,0 +1,101 @@
+/* Global Styles */
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  color: $dark-color;
+  background-color: $light-color;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-bold;
+  margin: $spacing-md 0;
+}
+
+p {
+  margin: $spacing-sm 0;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+
+  &.primary {
+    background-color: $primary-color;
+    color: $light-color;
+  }
+
+  &.secondary {
+    background-color: $secondary-color;
+    color: $light-color;
+  }
+
+  &:disabled {
+    background-color: $light-color;
+    color: $dark-color;
+    cursor: not-allowed;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -$spacing-sm;
+}
+
+.col {
+  flex: 1;
+  padding: 0 $spacing-sm;
+}
+
+.card {
+  background-color: $light-color;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: $spacing-md;
+  margin: $spacing-md 0;
+}
+
+.alert {
+  padding: $spacing-md;
+  border-radius: $border-radius;
+  margin: $spacing-md 0;
+
+  &.success {
+    background-color: $success-color;
+    color: $light-color;
+  }
+
+  &.warning {
+    background-color: $warning-color;
+    color: $dark-color;
+  }
+
+  &.danger {
+    background-color: $danger-color;
+    color: $light-color;
+  }
+}

@@ -166,3 +166,7 @@ cython_debug/
 **/fuchsia/
 **/.idea/
 **/.vscode/
+
+# Environment files
+.env
+.env.*
