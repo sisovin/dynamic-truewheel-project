@@ -1,221 +1,119 @@
 # Dynamic Truewheel Project
 
-## Overview
+[![GitHub repo](https://img.shields.io/badge/Repository-Visit-blue?style=flat-square)](https://github.com/sisovin/dynamic-truewheel-project)
 
-This project is a web application that consists of a Django REST API backend and a Flutter web app frontend. The project is structured as follows:
+The **Dynamic Truewheel Project** is a dynamic application designed to provide seamless integration between a Django backend and a Flutter (Dart) frontend. This repository is the foundation for building powerful and dynamic applications.
 
-```
-├── apps/
-│   ├── backend/                  # Django REST API
-│   │   ├── my_api/               # Main Django app
-│   │   │   ├── __init__.py
-│   │   │   ├── admin.py
-│   │   │   ├── apps.py
-│   │   │   ├── migrations/
-│   │   │   ├── models.py
-│   │   │   ├── serializers.py
-│   │   │   ├── tests.py
-│   │   │   ├── urls.py
-│   │   │   ├── views.py
-│   │   │   └── middleware.py
-│   └── frontend/                 # Flutter Web App
-│       ├── lib/
-│       │   ├── main.dart         # App entry point
-│       │   ├── app/              # App configuration
-│       │   │   ├── app.dart
-│       │   │   ├── router.dart
-│       │   │   └── theme.dart
-│       ├── pubspec.yaml          # Dependencies
-│       └── README.md             # Project documentation
-├── .gitignore
-├── README.md                     # Main project documentation
-├── docker-compose.yml            # Docker configuration
-└── docs/                         # Additional documentation
-    ├── api.md                    # API documentation
-    └── styleguide.md             # UI style guide
-```
+## Features
 
-## Backend
+- **Backend**: A reliable Django-based backend with RESTful APIs.
+- **Frontend**: Flutter (Dart)-built cross-platform app for an intuitive user experience.
+- **Scalable Architecture**: Designed for scalability and ease of development.
 
-The backend is a Django REST API that handles the server-side logic and data storage. It is located in the `apps/backend` directory.
+---
 
-### Models
+## Getting Started
 
-Models are defined in `apps/backend/my_api/models.py`. They represent the data structure and relationships.
+Follow the instructions below to set up the project locally.
 
-### Serializers
+---
 
-Serializers are created in `apps/backend/my_api/serializers.py`. They convert model instances to JSON format.
+### How to Set Up Django (Backend)
 
-### Views
-
-Views are implemented in `apps/backend/my_api/views.py`. They handle API requests and perform CRUD operations.
-
-### URLs
-
-URL patterns are defined in `apps/backend/my_api/urls.py`. They route requests to the appropriate views.
-
-### Middleware
-
-Middleware is added in `apps/backend/my_api/middleware.py`. It processes requests and responses.
-
-## Frontend
-
-The frontend is a Flutter web app that provides the user interface. It is located in the `apps/frontend` directory.
-
-### App Entry Point
-
-The app entry point is defined in `apps/frontend/lib/main.dart`. It initializes the Flutter app.
-
-### App Configuration
-
-The app is configured in the `apps/frontend/lib/app` directory. This includes settings and routing.
-
-### Routing
-
-Routing is set up in `apps/frontend/lib/app/router.dart`. It defines the routes and navigation.
-
-### Theme
-
-The app theme is defined in `apps/frontend/lib/app/theme.dart`. It includes styles and themes.
-
-### Dependencies
-
-Dependencies are listed in `apps/frontend/pubspec.yaml`. This file includes necessary packages and plugins.
-
-## Documentation
-
-### Main Project Documentation
-
-The main project documentation is provided in this `README.md` file. It gives an overview of the project.
-
-### API Documentation
-
-API documentation is available in `docs/api.md`. It provides details on endpoints and usage.
-
-### UI Style Guide
-
-A UI style guide is created in `docs/styleguide.md`. It defines design principles and guidelines.
-
-## Deployment
-
-### Docker Configuration
-
-Docker configuration is set up in `docker-compose.yml`. It defines services and dependencies for containerized deployment.
-
-### Gitignore
-
-A `.gitignore` file is added to exclude unnecessary files from version control. It includes common patterns for Python and Flutter projects.
-
-## Setup Instructions
-
-### Prerequisites
-
-- Docker
-- Docker Compose
-- Flutter SDK
-- Python 3.x
-- PostgreSQL
-
-### Backend Setup
-
-1. Navigate to the backend directory:
+1. **Clone the Repository**  
    ```bash
-   cd apps/backend
+   git clone https://github.com/sisovin/dynamic-truewheel-project.git
+   cd dynamic-truewheel-project
    ```
 
-2. Create a virtual environment and activate it:
+2. **Navigate to the Backend Directory**  
+   If the backend is located in a subdirectory (e.g., `backend`), move into it:  
    ```bash
-   python -m venv venv
-   source venv/bin/activate
+   cd backend
    ```
 
-3. Install the required dependencies:
+3. **Create and Activate a Virtual Environment**  
+   ```bash
+   python3 -m venv env
+   source env/bin/activate  # On Windows, use `env\Scripts\activate`
+   ```
+
+4. **Install Dependencies**  
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Apply the database migrations:
+5. **Apply Migrations**  
    ```bash
    python manage.py migrate
    ```
 
-5. Create a superuser:
-   ```bash
-   python manage.py createsuperuser
-   ```
-
-6. Start the development server:
+6. **Run the Development Server**  
    ```bash
    python manage.py runserver
    ```
 
-### Frontend Setup
+   The server will be running at `http://127.0.0.1:8000`.
 
-1. Navigate to the frontend directory:
+---
+
+### How to Set Up Flutter (Frontend)
+
+1. **Install Flutter**  
+   Follow the official guide to install Flutter: [Flutter Installation Guide](https://flutter.dev/docs/get-started/install).
+
+2. **Verify Installation**  
+   Run the following command to ensure Flutter is installed correctly:  
    ```bash
-   cd apps/frontend
+   flutter doctor
    ```
 
-2. Install the required dependencies:
+3. **Navigate to the Flutter Directory**  
+   If the frontend is located in a subdirectory (e.g., `frontend`), move into it:  
+   ```bash
+   cd frontend
+   ```
+
+4. **Install Dependencies**  
    ```bash
    flutter pub get
    ```
 
-3. Run the Flutter web app:
+5. **Run the Application**  
+   To run the Flutter app on a connected device or emulator:  
    ```bash
-   flutter run -d web-server --web-port 8080 --web-hostname 0.0.0.0
+   flutter run
    ```
 
-### Docker Setup
-
-1. Build and start the Docker containers:
+6. **Build the Application**  
+   To build the application for release:  
    ```bash
-   docker-compose up --build
+   flutter build apk  # For Android
+   flutter build ios  # For iOS
    ```
 
-2. Access the backend API at `http://localhost:8000/api/`.
+---
 
-3. Access the Flutter web app at `http://localhost:8080/`.
+## Project Structure
 
-## Feature Overview
+```
+dynamic-truewheel-project/
+├── backend/        # Django backend
+├── frontend/       # Flutter frontend
+├── README.md       # Project documentation
+└── ...
+```
 
-### Shared Components
+---
 
-- **App Bar**: Sticky behavior and mobile menu.
-- **Footer**: Multi-column layout and quick links.
-- **Back to Top**: Scroll detection and smooth scroll.
-- **Newsletter**: Email validation and API integration.
-- **Social Icons**: Platform icons and hover effects.
+## Contributing
 
-### Services
+Contributions are welcome! Please fork the repository and submit a pull request with your changes.
 
-- **API Service**: Dio configuration and error handling.
-- **Auth Service**: Login/logout and token management.
-- **Vehicle Service**: Vehicle fetching and search/filter.
+---
 
-### Utilities
+## License
 
-- **Constants**: App constants and API endpoints.
-- **Extensions**: String extensions and context helpers.
-- **SEO Helper**: Meta tag management and dynamic title/description.
+This project is licensed under the [MIT License](LICENSE).
 
-### Static Assets
-
-- **Index HTML**: SEO meta tags and favicon references.
-- **Styles**: SCSS variables, responsive mixins, and global styles.
-
-### Project Configuration
-
-- **Gitignore**: Python/Flutter defaults and environment files.
-- **Docker Compose**: Django, PostgreSQL, and Flutter web services.
-- **API Documentation**: Detailed API documentation.
-- **Style Guide**: UI components reference.
-
-### Additional Tasks
-
-- Write unit/integration tests.
-- Set up analytics.
-- Configure error tracking.
-- Implement accessibility features.
-- Add performance monitoring.
+---
